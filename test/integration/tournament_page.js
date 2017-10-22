@@ -28,7 +28,7 @@ class TournamentPage {
   clickGoAndWaitForWinner() {
     this.driver.findElement(this.startButtonSelector).click();
     this.driver.wait(until.elementLocated(this.winnerSelector), 2000);
-    const winnerElement = this.driver.findElement(this.winnerSelector);z
+    const winnerElement = this.driver.findElement(this.winnerSelector);
     return this.driver.wait(until.elementTextMatches(winnerElement, /.+/), 2000);
   }
 
