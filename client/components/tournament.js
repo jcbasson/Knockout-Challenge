@@ -85,11 +85,8 @@ class Tournament {
         if (this.isComplete) {
             this.reset();
         }
-        //Get user entries
-        const teamsPerMatch = this.txtTeamsPerMatch.value;
-        const numberOfTeams = this.txtNumberOfTeams.value;
-        //Validate user entries and get the result
-        const validationResult = this.tournamentCalculator.validateEntries(teamsPerMatch, numberOfTeams, this.maximumNumberOfTeamPerTournament);
+        //Get the user input and validation result of them
+        const {teamsPerMatch, numberOfTeams, validationResult} = this.getUserInput();
         //Set the validation message
         this.setValidationMessageComponent(validationResult);
         //If user entries are valid
@@ -212,6 +209,20 @@ class Tournament {
     setValidationMessageComponent({valid, message}) {
         this.validationMessageComponent.textContent = message;
         this.validationMessageComponent.className = valid ? 'validation-error-message hidden' : 'validation-error-message'
+    }
+
+    /**
+     * @memberOf Tournament
+     * @desc Gets the user input from the DOM and validates it
+     * @param {Object}
+     */
+    getUserInput() {
+        //Get user entries
+        const teamsPerMatch = this.txtTeamsPerMatch.value;
+        const numberOfTeams = this.txtNumberOfTeams.value;
+        //Validate user entries and get the result
+        const validationResult = this.tournamentCalculator.validateEntries(teamsPerMatch, numberOfTeams, this.maximumNumberOfTeamPerTournament);
+        return {teamsPerMatch, numberOfTeams, validationResult}
     }
 }
 
