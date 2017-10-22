@@ -11,7 +11,7 @@ window.onload = () => {
     new Tournament({
         maximumNumberOfTeamPerTournament,
         TournamentCalculator,
-        TournamentService,
-        containerElement: document
+        TournamentService : new TournamentService(window.location.port),
+        containerElement: document,
     });
 };

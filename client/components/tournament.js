@@ -50,6 +50,7 @@ class Tournament {
         this.btnStart = this.containerElement.getElementById('start');
         this.roundsComponent = this.containerElement.getElementById('roundsComponent');
         this.winnerDisplayElement = this.containerElement.getElementById('winner');
+        this.additionalWinnerText = this.containerElement.getElementById('additionalWinnerText');
         this.validationMessageComponent = this.containerElement.getElementById('validationMessageComponent');
         this.btnStart.addEventListener('click', this.start.bind(this), true);
     }
@@ -72,6 +73,7 @@ class Tournament {
         this.teamsPerMatch = 0;
         this.currentRoundMatches = null;
         this.winnerDisplayElement.textContent = '';
+        this.additionalWinnerText.className = 'hidden';
     }
 
     /**
@@ -183,8 +185,13 @@ class Tournament {
      * @param {Team} winningTeam
      */
     tournamentWinnerHandler(winningTeam) {
-        this.winnerDisplayElement.textContent = `${winningTeam.name} is the Winner.`;
+        //Display winner to user
+        this.winnerDisplayElement.textContent = winningTeam.name;
+        //Show additional winner text
+        this.additionalWinnerText.className = '';
+        //Mark tournament as complete
         this.isComplete = true;
+        //Re-enable start button
         this.disableStartButton(false);
     }
 
