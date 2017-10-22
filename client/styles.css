@@ -1,0 +1,59 @@
+.tournament-component {
+    box-sizing: border-box;
+
+}
+
+#winner {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.tournament-component__round-component {
+    width: auto;
+    height: auto;
+    min-height: 30px;
+    padding-top: 15px;
+    background-color: #D3DAEA;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.round-component__match-component {
+    display: inline-block;
+    padding: 5px;
+    width: 10px;
+}
+
+.round-component__match-component > .square {
+    width: 5px;
+    height: 5px;
+    border: 1px solid;
+}
+
+.incomplete-game > .square {
+    background: white;
+}
+
+.complete-game > .square {
+    background: black;
+}
+
+.validation-error-message
+{
+    display: block;
+    width: 400px;
+    border: 1px solid #D8D8D8;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: Arial;
+    font-size: 11px;
+    text-transform: uppercase;
+    background-color: rgb(255, 249, 242);
+    color: rgb(211, 0, 0);
+    text-align: center;
+}
+.hidden{
+    display: none;
+}

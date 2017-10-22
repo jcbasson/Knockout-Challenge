@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="./client/styles.css">
+    <script type="module" src="client/client.js"></script>
+    <title>Knockout Tournament</title>
+</head>
+<body id="tournamentComponent" class="tournament-component">
+
+<span id="validationMessageComponent" class="validation-error-message hidden">
+   Your message could not be sent. Please check your email address and try again.
+</span>
+<!-- For tests to pass, the IDs of the elements below MUST NOT change. -->
+<input id="teamsPerMatch" placeholder="Teams per match" type="number"/>
+<input id="numberOfTeams" placeholder="Number of teams" type="number"/>
+<button id="start">Start</button>
+<span id="winner"></span>
+<div id="roundsComponent" class="rounds-component"></div>
+</body>
+</html>
