@@ -1,10 +1,8 @@
 # Knockout Tournament
 
-The goal of this task is to simulate a single-elimination knockout tournament in the browser, determining the winner as quickly as possible.
+Pure vanilla js single-elimination knockout tournament in the browser, determining the winner as quickly as possible.
 
-We expect this task will take around 5 hours.
-
-The simulation must implement the following flow:
+User Stories:
 
 1. The user enters the teams participating per match (`#teamsPerMatch`).
 2. The user enters the number of teams participating in the tournament (a non-zero power of the `#teamsPerMatch` value)
@@ -22,8 +20,6 @@ Both teams and matches have scores that are constant for the duration of the tou
 4. In the event of a tie, the team with the lowest ID wins.
 
 ### UI Requirements
-Please implement the simple UI wireframes outlined below. Minimal styling is acceptable.
-
 Display a square for each match. Completed matches should be filled with a solid colour.
 ```
 ■ ■ ■ □ □ □ □
@@ -39,42 +35,12 @@ Killara Quokkas is the Winner.
 
 ## Constraints
 
-You may:
 
-- Develop only for Chrome
-- Use any feature available in the latest stable release of Chrome
-- Edit `/etc/hosts`
+- Developed only for Chrome
+- No hard code the number of teams per match — respect the `#teamsPerMatch` value
+- No use of any build tools other than npm (Browserify, webpack, etc.)
+- No sse any frameworks or libraries (Angular, jQuery, React, etc.)
 
-You must not:
-
-- Hard code the number of teams per match — respect the `#teamsPerMatch` value
-- Modify the server or integration tests
-- Modify/remove the `#teamsPerMatch`, `#numberOfTeams`, `#start`, or `#winner` elements
-- Submit your solution if the test suite is failing
-- Use any build tools other than npm (Browserify, webpack, etc.)
-- Use any frameworks or libraries (Angular, jQuery, React, etc.)
-
-## Marking Criteria
-
-Your code should be clear and easy to understand:
-
-- Avoids unnecessary complexity / over-engineering
-- Brief comments are added where appropriate
-- Broken into logical chunks
-- Follows a module pattern
-
-Your code should be performant:
-
-- Gives feedback to the user as soon as possible (perceived performance)
-- Intelligently coordinates dependent asynchronous tasks
-- UI remains responsive
-
-Your code should be testable (but writing tests isn't necessary):
-
-- Application and bootstrap code is split into separate files
-- Class-based architecture (ES6 classes preferred)
-- Dependency injection (the design pattern, not a framework or library)
-- No singletons or static mutable state 
 
 ## Running
 
@@ -179,5 +145,3 @@ $ curl http://localhost:8765/winner?tournamentId=0&teamScores=8&teamScores=9&mat
   score: 9
 }
 ```
-
-Canva Pty Ltd owns the copyright in this document and use without permission is prohibited.
